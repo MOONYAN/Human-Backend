@@ -12,8 +12,8 @@ export class TaskService {
     @Cron(CronExpression.EVERY_10_SECONDS)
     async handleCorn(){
         this.logger.debug('Called every 10 seconds');
-        await this.humanService.toRebornStage();
-        await this.humanService.toDeadStage();
-        await this.humanService.toGrowingStage();
+        this.humanService.toRebornStage();
+        this.humanService.toDeadStage();
+        this.humanService.toGrowingStage();
     }
 }
