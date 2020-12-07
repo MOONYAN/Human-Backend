@@ -1,10 +1,11 @@
-import { DatabaseConnectionService } from './shared/service/database-connection';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { DatabaseConnectionService } from './shared/service/database-connection';
 import { DaoModule } from './dao/dao.module';
+import { HumanModule } from './human/human.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { DaoModule } from './dao/dao.module';
       inject: [ConfigService],
       useClass: DatabaseConnectionService
     }),
-    DaoModule
+    DaoModule,
+    HumanModule
   ],
   controllers: [AppController],
   providers: [AppService],

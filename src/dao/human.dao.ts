@@ -10,9 +10,13 @@ export class HumanDao {
         @InjectRepository(HumanEntity)
         private repo: Repository<HumanEntity>) { }
 
-    async createOne(name: string): Promise<HumanEntity> {
+    async createOne(name: string, born: boolean, growing: boolean, dead: boolean, reborn: boolean): Promise<HumanEntity> {
         let human = this.repo.create();
         human.name = name;
+        human.born = born;
+        human.growing = growing;
+        human.dead = dead;
+        human.reborn = reborn;
         return await this.repo.save(human);
     }
 
