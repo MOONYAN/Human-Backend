@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { DatabaseConnectionService } from './shared/service/database-connection';
 import { DaoModule } from './dao/dao.module';
 import { HumanModule } from './human/human.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { HumanModule } from './human/human.module';
       inject: [ConfigService],
       useClass: DatabaseConnectionService
     }),
+    ScheduleModule.forRoot(),
     DaoModule,
     HumanModule
   ],
