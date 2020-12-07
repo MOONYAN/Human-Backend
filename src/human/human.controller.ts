@@ -13,6 +13,11 @@ export class HumanController {
         return this.humanService.createOne(dto);
     }
 
+    @Get()
+    getMany() {
+        return this.humanService.getMany();
+    }
+
     @Get(':id')
     getOne(@Param('id') id: number) {
         return this.humanService.getOne(id);
