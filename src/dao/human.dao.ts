@@ -28,6 +28,14 @@ export class HumanDao {
         return human;
     }
 
+    async getMany(): Promise<HumanEntity[]> {
+        return await this.repo.find();
+    }
+
+    async updateMany(humans: HumanEntity[]): Promise<HumanEntity[]> {
+        return await this.repo.save(humans);
+    }
+
     async updateOne(humanId: number, updatedhuman: HumanEntity): Promise<HumanEntity> {
         let human = await this.repo.findOne(humanId);
         if (human === undefined) {
