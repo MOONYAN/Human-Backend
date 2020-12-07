@@ -1,0 +1,14 @@
+version: "3"
+
+networks:
+  humannetwork:
+    driver: bridge
+
+services:
+  db:
+    image: postgres:12.5-alpine
+    container_name: human.db
+    ports:
+      - 5432:5432
+    environment: 
+      POSTGRES_PASSWORD: root
