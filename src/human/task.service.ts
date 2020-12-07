@@ -10,10 +10,10 @@ export class TaskService {
     constructor(private humanService: HumanService) { }
 
     @Cron(CronExpression.EVERY_10_SECONDS)
-    handleCron() {
-        this.logger.debug('Called every 10 seconds')
-        this.humanService.toRebornStage();
-        this.humanService.toDeadStage();
-        this.humanService.toGrowingStage();
+    async handleCorn(){
+        this.logger.debug('Called every 10 seconds');
+        await this.humanService.toRebornStage();
+        await this.humanService.toDeadStage();
+        await this.humanService.toGrowingStage();
     }
 }

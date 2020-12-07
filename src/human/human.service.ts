@@ -15,6 +15,11 @@ export class HumanService {
         return this.toDto(human);
     }
 
+    async getMany():Promise<ResHumanDto[]>{
+        const humans = await this.humanDao.getMany();
+        return humans.map(e=>this.toDto(e));
+    }
+
     async getOne(id: number): Promise<ResHumanDto> {
         const human = await this.humanDao.getOne(id);
         return this.toDto(human);
