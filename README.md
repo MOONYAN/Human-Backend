@@ -1,6 +1,6 @@
 # Human-Backend
 
-As a backend for frontend APP [Human](https://moonyan.github.io/human)
+As a backend for frontend APP [Human](https://github.com/MOONYAN/Human)
 
 [DEMO](https://owen-human-backend.herokuapp.com/)
 
@@ -12,7 +12,7 @@ As a backend for frontend APP [Human](https://moonyan.github.io/human)
   - Growing
   - Dead
   - Reborn
-- Client query human's stage.
+- Client query human's stage in **long-polling**.
 
 ## API
 
@@ -52,9 +52,6 @@ $ yarn start:prod
 $ docker-compose up
 $ yarn start
 ```
-
-## Todo
-- Fix scheduling issue on Heroku
 
 ## Architecture
 
